@@ -1,6 +1,7 @@
 # OpenLLaMA-Chinese
 
-![](media/logo.webp)
+ <div align=center><img src="media/logo.webp" width = "200" height = "200" /></div>
+
 
 [OpenLLaMA](https://github.com/openlm-research/open_llama) released a permissively licensed open source reproduction of Meta AI’s LLaMA 7B and 13B trained on the RedPajama dataset and a smaller 3B variant of LLaMA model.
 We have conducted fine-tuning on Chinese and English instructions based on it and have publicly released our weights.
