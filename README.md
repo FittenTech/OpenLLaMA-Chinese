@@ -2,36 +2,42 @@
 
  <div align=center><img src="media/logo.webp" width = "200" height = "200" /></div>
 
+ <div align=center>
+ <img src="https://img.shields.io/badge/Code--License-Apache2-green"/>
+ <img src="https://img.shields.io/badge/Data--License-CC%20By%20NC%204.0-orange"/>
+ <img src="https://img.shields.io/badge/Model--License-Apache2-blue"/>
+ </div>
 
-[OpenLLaMA](https://github.com/openlm-research/open_llama) released a permissively licensed open source reproduction of Meta AI’s LLaMA 7B and 13B trained on the RedPajama dataset and a smaller 3B variant of LLaMA model.
-We have conducted fine-tuning on Chinese and English instructions based on it and have publicly released our weights.
+**OpenLLaMA-Chinese** is a 100% free Chinese large language model, and can be utilized for both **non-commercial and commercial purposes**.
 
-Chinese instructions finetuning weights:
+OpenLLaMA-Chinese is built on [OpenLLaMA](https://github.com/openlm-research/open_llama), which is a permissively licensed open-source reproduction of Meta AI's LLaMA 7B and 13B models, trained on the RedPajama dataset. OpenLLaMA also includes a smaller 3B variant of the LLaMA model. We have conducted fine-tuning on Chinese and English instructions using the OpenLLaMA base models and have made our weights publicly available.
+
+#### Chinese Instructions Fine-tuning Weights:
 
 - [OpenLLaMA 3B](https://huggingface.co/FittenTech/openllama-chinese-3b)
 - [OpenLLaMA 7B](https://huggingface.co/FittenTech/openllama-chinese-7b)
 - [OpenLLaMA 13B](coming soon!)
 
-English instructions finetuning weights:
+#### English Instructions Fine-tuning Weights:
 - [OpenLLaMA 3B](coming soon!)
 - [OpenLLaMA 7B](coming soon!)
 - [OpenLLaMA 13B](coming soon!)
 
-Chinese+English instructions finetuning weights:
+#### Chinese+English Instructions Fine-tuning Weights:
 - [OpenLLaMA 3B](coming soon!)
 - [OpenLLaMA 7B](https://huggingface.co/FittenTech/openllama-chinese-english-7b)
 - [OpenLLaMA 13B](coming soon!)
 
 ## Data
 
-For Chinese finetuning, we used the [alpaca_data_zh_51k.json](data/alpaca_data_zh_51k.json) from [Chinese-LLaMA-Alpaca](https://github.com/ymcui/Chinese-LLaMA-Alpaca).
+For Chinese fine-tuning, we utilized the [alpaca_data_zh_51k.json](data/alpaca_data_zh_51k.json) from the [Chinese-LLaMA-Alpaca](https://github.com/ymcui/Chinese-LLaMA-Alpaca) project.
 
-For English finetuning, we used the [alpaca_data.json](data/alpaca_data.json) from [StanfordAlpaca](https://github.com/tatsu-lab/stanford_alpaca).
+For English fine-tuning, we employed the[alpaca_data.json](data/alpaca_data.json) from the [StanfordAlpaca](https://github.com/tatsu-lab/stanford_alpaca) project.
 
-For English+Chinese finetuning, we used both of them.
+For fine-tuning with both English and Chinese instructions, we used data from both sources.
 
 ## Usage
-We provide inference code based on [Jittor](https://github.com/Jittor/jittor) and [torch](https://github.com/pytorch/pytorch)
+We provide inference code based on [Jittor](https://github.com/Jittor/jittor) and [PyTorch](https://github.com/pytorch/pytorch)
 
 ### Jittor Inference
 coming soon.
@@ -39,16 +45,19 @@ coming soon.
 ### Torch Inference
 We modified the generate code from [LLaMA-X](https://github.com/AetherCortex/Llama-X).
 
-Download the weights and change the `base_model` path in `inference/gen_torch.py`
+To use the PyTorch inference code, follow these steps:
+
+1. Download the weights and update the base_model path in inference/gen_torch.py.
+2. Run the following command:
 ```shell
 python inference/gen_torch.py
 ```
 
 ## Pretraining and Finetuning
-FittenTech offers LLMs pretraining and fine-tuning services. Further details can be found [here](https://llm.fittentech.com/).
+FittenTech offers LLMs pretraining and fine-tuning services. For more details, please visit https://llm.fittentech.com/.
 
-## Thanks
-We would like to express our gratitude to the developers of the following open-source projects, as our project is based on their work.
+## Acknowledgments
+We would like to express our gratitude to the developers of the following open-source projects, as our project builds upon their work:
 
 - [LLaMA](https://github.com/facebookresearch/llama)
 - [OpenLLaMA](https://github.com/openlm-research/open_llama)
