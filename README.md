@@ -32,7 +32,7 @@ OpenLLaMA-Chinese is built on [OpenLLaMA](https://github.com/openlm-research/ope
 
 For Chinese fine-tuning, we utilized the [alpaca_data_zh_51k.json](data/alpaca_data_zh_51k.json) from the [Chinese-LLaMA-Alpaca](https://github.com/ymcui/Chinese-LLaMA-Alpaca) project.
 
-For English fine-tuning, we employed the[alpaca_data.json](data/alpaca_data.json) from the [StanfordAlpaca](https://github.com/tatsu-lab/stanford_alpaca) project.
+For English fine-tuning, we employed the [alpaca_data.json](data/alpaca_data.json) from the [StanfordAlpaca](https://github.com/tatsu-lab/stanford_alpaca) project.
 
 For fine-tuning with both English and Chinese instructions, we used data from both sources.
 
