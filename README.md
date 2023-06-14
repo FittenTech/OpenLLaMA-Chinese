@@ -16,7 +16,7 @@ OpenLLaMA-Chinese is built on [OpenLLaMA](https://github.com/openlm-research/ope
 
 - [OpenLLaMA 3B](https://huggingface.co/FittenTech/openllama-chinese-3b)
 - [OpenLLaMA 7B](https://huggingface.co/FittenTech/openllama-chinese-7b)
-- [OpenLLaMA 13B](coming soon!)
+- [OpenLLaMA 13B](https://huggingface.co/FittenTech/openllama-chinese-13b)
 
 #### English Instructions Fine-tuning Weights:
 - [OpenLLaMA 3B](coming soon!)
