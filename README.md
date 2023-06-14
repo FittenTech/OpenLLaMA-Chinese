@@ -37,12 +37,6 @@ For English fine-tuning, we employed the [alpaca_data.json](data/alpaca_data.jso
 For fine-tuning with both English and Chinese instructions, we used data from both sources.
 
 ## Usage
-We provide inference code based on [Jittor](https://github.com/Jittor/jittor) and [PyTorch](https://github.com/pytorch/pytorch)
-
-### Jittor Inference
-coming soon.
-
-### Torch Inference
 We modified the generate code from [LLaMA-X](https://github.com/AetherCortex/Llama-X).
 
 To use the PyTorch inference code, follow these steps:
