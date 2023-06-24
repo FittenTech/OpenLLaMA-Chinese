@@ -4,13 +4,15 @@ import torch
 import transformers
 import gradio as gr
 from transformers import LlamaTokenizer, LlamaForCausalLM, GenerationConfig
-
+import os 
+os.environ["CUDA_VISIBLE_DEVICES"]="0"
 
 
 def main(
     load_8bit: bool = False,
-    base_model: str = "/mnt/disk1/lxl/release_models/openllama-chinese-7b"
+    base_model: str = "/mnt/disk1/lxl/huggingface/openllama-english-7b-evol-intruct"
 ):
+    evol_intruct = "evol" in base_model
     tokenizer = LlamaTokenizer.from_pretrained(base_model)
     model = LlamaForCausalLM.from_pretrained(
         base_model,
@@ -41,7 +43,7 @@ def main(
         max_new_tokens=512,
         **kwargs,
     ):
-        prompt = generate_prompt(instruction, input)
+        prompt = generate_prompt(instruction, input,evol_intruct)
         inputs = tokenizer(prompt, return_tensors="pt")
         input_ids = inputs["input_ids"].to(model.device)
         generation_config = GenerationConfig(
@@ -66,23 +68,24 @@ def main(
     gr.Interface(
         fn=evaluate,
         inputs=[
-            gr.components.Textbox(
-                lines=2, label="Instruction", placeholder="Tell me about alpacas."
-            ),
-            gr.components.Textbox(lines=2, label="Input", placeholder="none"),
-            gr.components.Slider(minimum=0, maximum=1, value=0.1, label="Temperature"),
-            gr.components.Slider(minimum=0, maximum=1, value=0.75, label="Top p"),
-            gr.components.Slider(
-                minimum=0, maximum=100, step=1, value=40, label="Top k"
-            ),
-            gr.components.Slider(minimum=1, maximum=4, step=1, value=4, label="Beams"),
-            gr.components.Slider(
-                minimum=1, maximum=2000, step=1, value=128, label="Max tokens"
-            ),
-        ],
+        gr.components.Textbox(
+            lines=2, label="Instruction", placeholder="Tell me about alpacas."
+        ),
+        gr.components.Textbox(lines=2, label="Input", placeholder="none"),
+        gr.components.Slider(minimum=0, maximum=1, value=0.1, label="Temperature"),
+        gr.components.Slider(minimum=0, maximum=1, value=0.75, label="Top p"),
+        gr.components.Slider(
+            minimum=0, maximum=100, step=1, value=40, label="Top k"
+        ),
+        gr.components.Slider(minimum=1, maximum=4, step=1, value=4, label="Beams"),
+        gr.components.Slider(
+            minimum=1, maximum=2000, step=1, value=128, label="Max tokens"
+        ),
+    ]
+,
         outputs=[
             gr.inputs.Textbox(
-                lines=5,
+                lines=30,
                 label="Output",
             )
         ],
@@ -91,7 +94,10 @@ def main(
     ).launch(share=True)
 
 
-def generate_prompt(instruction, input=None):
+def generate_prompt(instruction, input=None,evol_intruct = False):
+    if evol_intruct:
+        return f"{instruction}\n\n### Response:"
+
     if input:
         return f"""Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
 
