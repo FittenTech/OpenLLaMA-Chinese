@@ -13,6 +13,8 @@
 OpenLLaMA-Chinese is built on [OpenLLaMA](https://github.com/openlm-research/open_llama), which is a permissively licensed open-source reproduction of Meta AI's LLaMA 7B and 13B models, trained on the RedPajama dataset. OpenLLaMA also includes a smaller 3B variant of the LLaMA model. We have conducted fine-tuning on Chinese and English instructions using the OpenLLaMA base models and have made our weights publicly available.
 
 ### News  
+\[2023/06/29\] We released the [openllama 13b](https://huggingface.co/FittenTech/openllama-english-13b-evol-instruct) model by using [evol intructions](https://huggingface.co/datasets/WizardLM/WizardLM_evol_instruct_V2_196k).
+
 \[2023/06/24\] We use [evol intructions](https://huggingface.co/datasets/WizardLM/WizardLM_evol_instruct_V2_196k) from [WizardLM](https://github.com/nlpxucan/WizardLM) to finetune the [openllama 7B](https://huggingface.co/FittenTech/openllama-english-7b-evol-intruct), the 13B Model will be avaliable in next week!.
 
 ### Evol Instruction Examples
@@ -23,6 +25,7 @@ OpenLLaMA-Chinese is built on [OpenLLaMA](https://github.com/openlm-research/ope
 #### Evol Instructions Fine-tuning Weights:
 
 - [OpenLLaMA 7B Evol Intruct](https://huggingface.co/FittenTech/openllama-english-7b-evol-intruct)
+- [OpenLLaMA 13B Evol Intruct](https://huggingface.co/FittenTech/openllama-english-13b-evol-instruct)
 
 #### Chinese Instructions Fine-tuning Weights:
 
